@@ -1,10 +1,10 @@
 {
-	"address": "somewhere in Linz",
+	"address": "Stadthalle Linz, Strohgasse 5, 53545 Linz am Rhein, Germany",
 	"earlyBirdEndDate": "TODO",
 	"eventBriteId": "TODO",
 	"dates": "October 14-17",
 	"length": "four",
-	"mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40529.58576821297!2d7.267608443597684!3d50.58811115049301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bef10fa22fc6db%3A0x13b2cff196a6e95f!2sLinz%2C%20Allemagne!5e0!3m2!1sfr!2sfr!4v1581349946728!5m2!1sfr!2sfr",
+	"mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1065.5444310093374!2d7.279565751190315!3d50.56567415862297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bef11ac8eeb459%3A0x777cc19e5ede7d4f!2sStrohgasse%205%2C%2053545%20Linz%20am%20Rhein!5e0!3m2!1sen!2sde!4v1581363755937!5m2!1sen!2sde",
 	"outputFolder": "out",
 	"price": "TODO",
 	"speakingLink": "open an issue on github about talk proposal",

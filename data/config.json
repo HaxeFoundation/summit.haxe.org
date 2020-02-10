@@ -9,7 +9,7 @@
 	"price": "TODO",
 	"speakingLink": "open an issue on github about talk proposal",
 	"speakingOpen": true,
-	"ticketOpen": false,
+	"stage": "EarlyPlanning",
 	"town": "Linz am Rhein",
 	"year": 2020,
 	"zone": "EU"

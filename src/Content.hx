@@ -102,7 +102,8 @@ class Content {
 
 		// Speakers page
 		for (speaker in content.speakers) {
-			Sys.println('Generating speaker page for ${speaker.name} ...');
+			var warning = speaker.talks.length == 0 ? " WARNING no talk for the speaker" : "";
+			Sys.println('Generating speaker page for ${speaker.name} ...$warning');
 			Utils.save(Path.join(["speakers", speaker.id, "index.html"]), Views.speaker(speaker));
 		}
 

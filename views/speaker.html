@@ -9,18 +9,20 @@
 		::speaker.bio::
 	</p>
 
-	<h2>Talks:</h2>
-	<ul class="talks">
-		::for talk in speaker.talks::
-			<li>
-				<a href="/talks/::talk.id::/">
-					<h3>::talk.title::</h3>
+	::if speaker.talks.length > 0::
+		<h2>Talks:</h2>
+		<ul class="talks">
+			::for talk in speaker.talks::
+				<li>
+					<a href="/talks/::talk.id::/">
+						<h3>::talk.title::</h3>
 
-					<p>
-						::talk.description::
-					</p>
-				</a>
-			</li>
-		::end::
-	</ul>
+						<p>
+							::talk.description::
+						</p>
+					</a>
+				</li>
+			::end::
+		</ul>
+	::end::
 </section>

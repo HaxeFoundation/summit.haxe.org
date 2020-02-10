@@ -8,6 +8,7 @@ using StringTools;
 
 class Speaker {
 	public var id:String;
+	public var image:String;
 	public var name:String;
 	public var title:String;
 	public var bio:String;

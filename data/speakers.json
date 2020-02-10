@@ -1,8 +1,44 @@
 [
 	{
+		"id": "nicolas-cannasse",
+		"image": "nicolas-cannasse.png",
+		"name": "Nicolas Cannasse",
+		"title": "Director of the Haxe Foundation",
+		"bio": "Nicolas is the original creator of Haxe programming language, and director at Haxe Foundation. He is also creating games at Shiro Games using Haxe and the open source Heaps.io framework. His latest game Darksburg has been a hit on Steam."
+	},
+	{
 		"id": "simon-krajewski",
+		"image": "simon-krajewski.jpg",
 		"name": "Simon Krajewski",
-		"title": "Main maintainer of the Haxe Compiler",
+		"title": "Maintainer of the Haxe Compiler",
 		"bio": "Simon has been the main maintainer of the Haxe Compiler for several years. He enjoys investigating and solving problems, especially in collaboration with others."
+	},
+	{
+		"id": "aleksandr-kuzmenko",
+		"image": "aleksandr-kuzmenko.png",
+		"name": "Aleksandr Kuzmenko",
+		"title": "Maintainer of the Haxe Compiler",
+		"bio": "Haxe compiler developer. Using Haxe since 2009. Professionally using PHP since 2007 and Haxe since 2015."
+	},
+	{
+		"id": "robert-konrad",
+		"image": "robert-konrad.png",
+		"name": "Robert Konrad",
+		"title": "Developer at Deck 13 and creator of Kha",
+		"bio": "Robert is a modest human being but was cursed with a mission to overcome the challenges of high-performance cross-platform development of multimedia applications. He is suffering in silence from the intricate details of different system-level APIs and hardware quirks but nonetheless appears to be mentally stable most of the time."
+	},
+	{
+		"id": "juraj-kirchheim",
+		"image": "juraj-kirchheim.jpeg",
+		"name": "Juraj Kirchheim",
+		"title": "Haxe Addict",
+		"bio": "Juraj has started his journey through Haxe a little over ten years ago. Absorbed by this adventure, he never found the time to learn how to write short bios."
+	},
+	{
+		"id": "dan-korestelev",
+		"image": "dan-korestelev.png",
+		"name": "Dan Korestelev",
+		"title": "Developer at InnoGames and long-time Haxe contributor",
+		"bio": "nadako"
 	}
 ]

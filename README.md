@@ -37,7 +37,7 @@ Edit `data/speakers.json` and add an entry:
 }
 ```
 
-Add the speaker photo in `data/images/speakers/$id.jpg`.
+Add the speaker photo in `data/images/speakers/$image`.
 
 ## Adding a talk
 

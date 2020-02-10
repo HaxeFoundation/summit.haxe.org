@@ -1,0 +1,22 @@
+<section>
+	<h2>::talk.title::</h2>
+
+	::if talk.time != ""::
+		<h3>::talk.time::</h3>
+	::end::
+
+	<p>
+		::new tink.template.Html(talk.content)::
+	</p>
+
+	<h4>Presented by:</h4>
+	<div class="speakerdetails">
+		<a href="/speakers/::speaker.id::/">
+			<div class="speakerimage">
+				<img src="/images/speakers/::speaker.id::.jpg" />
+			</div>
+			<h2>::speaker.name::</h2>
+			<h3>::speaker.title::</h3>
+		</a>
+	</div>
+</section>

@@ -1,0 +1,26 @@
+<section class="speakerdetails">
+	<div class="speakerimage">
+		<img src="/images/speakers/::speaker.id::.jpg" />
+	</div>
+	<h2>::speaker.name::</h2>
+	<h3>::speaker.title::</h3>
+
+	<p>
+		::speaker.bio::
+	</p>
+
+	<h2>Talks:</h2>
+	<ul class="talks">
+		::for talk in speaker.talks::
+			<li>
+				<a href="/talks/::talk.id::/">
+					<h3>::talk.title::</h3>
+
+					<p>
+						::talk.description::
+					</p>
+				</a>
+			</li>
+		::end::
+	</ul>
+</section>

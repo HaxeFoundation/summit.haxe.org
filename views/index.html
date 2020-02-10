@@ -1,0 +1,161 @@
+<a name="index">&nbsp;</a>
+<section class="intro">
+	<h1>
+		<a href="#index">JOIN US!</a>
+	</h1>
+	<p>
+		The ::config.zone:: Haxe Summit is a ::config.length:: days event which will take place in ::config.town:: in
+		::config.dates:: ::config.year::.
+		It is the main Haxe Community Event in the ::config.zone:: and a great meeting spot for the people who create
+		Haxe, people who work with it or people who are new to Haxe and want to explore it.
+	</p>
+	<p>
+		We will have a mix of presentations and workshops about topics ranging from game development with Haxe to things
+		you can get up to on the Web.
+	</p>
+	<p>
+		Join us to:
+		<ul>
+			<li>meet the people who create the Haxian tech you are using</li>
+			<li>connect with other developers who may know a thing or two about Haxe that you don't</li>
+			<li>get a fresh boost of inspiration and motivation.</li>
+		</ul>
+	</p>
+	<p>
+		And all of that even before the conference party has worked its magic.
+	</p>
+	<p>
+		See you soon!
+	</p>
+</section>
+
+<a name="speakers">&nbsp;</a>
+<section class="speakers">
+	<h1>
+		<a href="#speakers">Speakers</a>
+	</h1>
+
+	<ul>
+		::for speaker in content.speakers::
+			<li>
+				<a href="speakers/::speaker.id::/">
+					<div class="speakerimage">
+						<img src="/images/speakers/::speaker.id::.jpg" />
+					</div>
+					<h3>::speaker.name::</h3>
+				</a>
+			</li>
+		::end::
+	</ul>
+</section>
+
+::if config.speakingOpen::
+<a name="speakup">&nbsp;</a>
+<section class="speakup">
+	<h1>
+		<a href="#speakup">SPEAK UP!</a>
+	</h1>
+	<p>
+		Are you:
+		<ul>
+			<li>doing something exciting with Haxe that you would love to tell us about</li>
+			<li>solving a pesky problem (workflows and tooling, anyone?);</li>
+			<li>looking to pass on some Haxian wisdom?</li>
+		</ul>
+	</p>
+	<p>
+		Then we would love to hear from you!
+	</p>
+	<p>
+		We are interested in quick showcases, more thorough presentations and full workshops.
+	</p>
+	<p>
+		Not sure if you should get up on that stage? Apply anyway! We will help you figure it out.
+	</p>
+	<a class="big_button" href="::config.speakingLink::">Speak Up!</a>
+</section>
+::end::
+
+<a name="partners">&nbsp;</a>
+<section class="partners">
+	<h1><a href="#partners">CHIP IN!</a></h1>
+	<p>The Haxe Summit is like a yearly dose of fresh energy for the Haxe community and the makers of Haxe. Help us put
+		on a good show and grow the community. Who knows, you might even meet your future Haxe developer while you are
+		enjoying the Summit with us!</p>
+
+	<h3>Sponsor the Event</h3>
+
+	<p>Are you interested in sponsoring this event? Awesome, we would love to hear from you.</p>
+	<a class="big_button" href="mailto:events@haxe.org">sponsor the event</a>
+</section>
+
+<a name="tickets">&nbsp;</a>
+<section class="tickets">
+	<h1><a href="#tickets">Tickets</a></h1>
+
+	::if config.ticketOpen::
+	<p>
+		The full ticket price will be ::config.price:: so take advantage of our Early bird pricing now!
+		<br />
+		Early bird pricing will be until ::config.earlyBirdEndDate::.
+	</p>
+
+	<div id="eventbrite-widget-container-::config.eventBriteId::" class="eventbrite"></div>
+
+	<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+	<script type="text/javascript">
+		var exampleCallback = function () {
+			console.log('Order complete!');
+		};
+
+		window.EBWidgets.createWidget({
+			widgetType: 'checkout',
+			eventId: '::config.eventBriteId::',
+			iframeContainerId: 'eventbrite-widget-container-::config.eventBriteId::',
+			iframeContainerHeight: 310,
+			onOrderComplete: exampleCallback
+		});
+	</script>
+	::else::
+	Tickets aren't open yet, check back later.
+	::end::
+</section>
+
+<a name="location">&nbsp;</a>
+<section class="location">
+	<h1>
+		<a href="#location">Location</a>
+	</h1>
+
+	<p>
+		The conference will take place at ::config.address::
+	</p>
+
+	<div class="details">
+		<div class="map">
+			<input id="activate-map" type="checkbox">
+			<label for="activate-map">
+
+			</label>
+			<iframe	src="::config.mapUrl::" width="100%" height="450" frameborder="0" style="border: 0" allowfullscreen="true"></iframe>
+		</div>
+	</div>
+</section>
+
+<a name="schedule">&nbsp;</a>
+<section class="schedule">
+	<h1><a href="#schedule">Schedule</a></h1>
+
+	No schedule yet, check back later.
+</section>
+
+<section class="footer">
+	<h1>
+		<a href="#contact">CONTACT</a>
+	</h1>
+	<p>
+		Do you have any questions or suggestions? Don’t hesitate to let us know.
+	</p>
+	<a class="big_button" href="mailto:events@haxe.org">contact us</a>
+</section>

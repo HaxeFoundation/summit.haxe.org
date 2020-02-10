@@ -1,0 +1,314 @@
+html {
+	height: 100%;
+	width: 100%;
+	font-family: Roboto;
+}
+
+section ul:not([class]), section ol:not([class]) {
+	margin: 1em;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: 300;
+}
+
+a[name] {
+	position: relative;
+	top: -49px;
+	background: red;
+	height: 0;
+	display: block;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+nav {
+	background-color: #0f0f0f;
+	transition: all 0.25s;
+	position: fixed;
+	z-index: 10;
+	color: white;
+	width: 100%;
+}
+
+nav ul {
+	padding: 15px 30px;
+	font-weight: 100;
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav ul li {
+	margin-left: 30px;
+	list-style: none;
+	text-transform: uppercase;
+}
+
+header {
+	width: 100%;
+	height: 330px;
+	padding-top: 40px;
+	background-color: #444;
+	background: url('/images/background.jpg') center;
+	background-size: cover;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+}
+
+header h1 {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	line-height: 1;
+	font-size: 120px;
+	font-weight: 100;
+	cursor: default;
+}
+
+header h1 img {
+	height: 1.25em;
+	margin-left: 0.075em;
+	margin-right: 0.15em;
+}
+
+header h1 span:first-child {
+	position: relative;
+	margin-left: 2.5em;
+	margin-right: 0.5em;
+	text-transform: uppercase;
+	font-size: 0.2em;
+	letter-spacing: 0.28em;
+}
+
+header h1 span:first-child strong {
+	letter-spacing: 0;
+	margin-left: -0.05em;
+	font-size: 3em;
+	font-weight: 900;
+	display: block;
+}
+
+header h1 .year {
+	line-height: 0.75em;
+}
+
+header h3 {
+	margin-top: 3em;
+	cursor: default;
+	text-align: center;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.big_button {
+	white-space: nowrap;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	background: crimson;
+	color: white;
+	transition: all 0.25s;
+	text-decoration: none;
+	padding: 0.5em 1.5em;
+	font-size: 28px;
+	font-weight: 100;
+	bottom: 0;
+}
+
+a.big_button:hover {
+	background: white;
+	color: crimson;
+}
+
+section {
+	overflow: hidden;
+	padding-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+section h1, section h2, section h3, section h4 {
+	padding: 0.5em;
+	text-align: center;
+	font-weight: 900;
+}
+
+section h1 a[href^="#"], section h2 a[href^="#"], section h3 a[href^="#"], section h4 a[href^="#"] {
+	position: relative;
+}
+
+section h1 a[href^="#"]:before, section h2 a[href^="#"]:before, section h3 a[href^="#"]:before, section h4 a[href^="#"]:before {
+	transition: all 0.25s;
+	content: '#';
+	display: block;
+	position: absolute;
+	right: 100%;
+	opacity: 0;
+}
+
+section h1 {
+	color: #2a040c;
+	font-size: 72px;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+}
+
+section>blockquote, section>p {
+	max-width: 760px;
+	margin: 1em;
+	margin-top: 0;
+}
+
+section:nth-of-type(2n+1) {
+	background: #eeeeee;
+}
+
+section:nth-of-type(2n) {
+	background: white;
+}
+
+section.location {
+	padding-bottom: 0;
+}
+
+section.location div.details {
+	margin-top: 50px;
+	width: 100%;
+	height: 80vh;
+	max-height: 40vw;
+	display: flex;
+}
+
+section.location div.details .map {
+	position: relative;
+	flex-basis: 100%;
+}
+
+section.location div.details .map input {
+	display: none;
+}
+
+section.location div.details .map label {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+section.location div.details .map iframe {
+	width: 100%;
+	height: 100%;
+}
+
+a[name] {
+	position: relative;
+	top: -49px;
+	background: red;
+	height: 0;
+	display: block;
+}
+
+section.intro {
+	padding-top: 50px;
+}
+
+.speakerdetails .talks>li {
+	margin-left: 30px;
+	list-style-type: square;
+}
+
+.speakerdetails .talks>li h3 {
+	margin: 2em 0 1.5em;
+	text-align: left;
+}
+
+.speakerdetails .talks>li li {
+	margin-left: 30px;
+	margin-bottom: 0.75em;
+}
+
+.speakerdetails .talks>li li p {
+	margin-bottom: 0;
+}
+
+.speakerdetails .talks>li li:last-child {
+	margin-bottom: 1.5em;
+}
+
+.speakerdetails .talks>li>p {
+	margin-bottom: 1.5em;
+}
+
+section.footer {
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.eventbrite {
+	width: 100%;
+	max-width: 750px;
+}
+
+section.speakers>ul {
+	text-align: center;
+	padding-top: 50px;
+}
+
+section.speakers>ul>li {
+	list-style: none;
+	display: inline-block;
+	vertical-align: top;
+	width: 240px;
+	margin: 0 10px;
+}
+
+.speakerimage {
+	overflow: hidden;
+	display: inline-block;
+	background: crimson;
+	width: 160px;
+	height: 160px;
+	border-radius: 160px;
+	border: 8px solid #111;
+}
+
+.speakerimage img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+section.speakup>ul {
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+section.speakup>ul>li {
+	vertical-align: top;
+	margin: 0 10px;
+}

@@ -1,0 +1,5 @@
+header {
+	height: calc(100vh - 120px);
+	max-height: 80vw;
+	padding-top: 0;
+}

@@ -3,26 +3,31 @@ import sys.FileSystem;
 import sys.io.File;
 
 class Assets {
-	public static function generate() {
-		var config = Config.get();
-
+	public static function generate(config:Config) {
+		// Copy common assets
 		Sys.println('Copying assets from "www" to "${config.outputFolder}" ...');
+		recursiveCopy("www", config.outputFolder);
 
-		for (entry in FileSystem.readDirectory("www")) {
-			copyFromDataFolder(entry, config.outputFolder);
+		// Copy event specific assets
+		Sys.println('Copying assets from "${config.path}/images" to "${config.outputFolder}/images" ...');
+		recursiveCopy(Path.join([config.path, "images"]), Path.join([config.outputFolder, "images"]));
+	}
+
+	static function recursiveCopy(inPath:String, outPath:String) {
+		for (entry in FileSystem.readDirectory(inPath)) {
+			copyFromDataFolder(entry, inPath, outPath);
 		}
 	}
 
-	static function copyFromDataFolder(path:String, to:String) {
-		var inPath = Path.join(["www", path]);
-		var outPath = Path.join([to, path]);
+	static function copyFromDataFolder(entry:String, inPath:String, outPath:String) {
+		var inPath = Path.join([inPath, entry]);
+		var outPath = Path.join([outPath, entry]);
 
 		if (FileSystem.isDirectory(inPath)) {
-			if (!FileSystem.exists(outPath)) {
-				FileSystem.createDirectory(outPath);
-			}
+			FileSystem.createDirectory(outPath);
+
 			for (entry in FileSystem.readDirectory(inPath)) {
-				copyFromDataFolder(Path.join([path, entry]), to);
+				copyFromDataFolder(entry, inPath, outPath);
 			}
 		} else {
 			File.copy(inPath, outPath);

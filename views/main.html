@@ -2,10 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>::config.zone:: Haxe Summit ::config.year:: in ::config.town::</title>
-		<link rel="stylesheet" href="/styles/common.css" />
+		<title>::if title != ""::::title:: - ::end::Haxe Summit ::config.year:: in ::config.town::</title>
+		<link rel="stylesheet" href="::rootPath::styles/common.css" />
 		::for style in extraStyles::
-			<link rel="stylesheet" href="/styles/::style::.css" />
+			<link rel="stylesheet" href="::rootPath::styles/::style::.css" />
 		::end::
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css" />
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content="https://summit.haxe.org/::config.zone::/::config.year::/" />
 
-		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="::rootPath::favicon.png" type="image/png" />
 
 		<meta property="og:url" content="https://summit.haxe.org/::config.zone::/::config.year::/" />
 		<meta property="og:title" content="::config.zone:: Haxe Summit ::config.year::" />
@@ -26,12 +26,14 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="/#index">Index</a></li>
-				<li><a href="/#speakers">Speakers</a></li>
-				<li><a href="/#partners">Partners</a></li>
-				<li><a href="/#tickets">Tickets</a></li>
-				<li><a href="/#location">Location</a></li>
-				<li><a href="/#schedule">Schedule</a></li>
+				<li><a href="::rootPath::#joinus">Join us</a></li>
+				<li><a href="::rootPath::#speakers">Speakers</a></li>
+				<li><a href="::rootPath::#speakup">Speak up</a></li>
+				<!--<li><a href="::rootPath::#partners">Partners</a></li>-->
+				<li><a href="::rootPath::#tickets">Tickets</a></li>
+				<li><a href="::rootPath::#location">Location</a></li>
+				<li><a href="::rootPath::#travel">Travel</a></li>
+				<li><a href="::rootPath::#schedule">Schedule</a></li>
 				<li><a href="mailto:events@haxe.org">Contact</a></li>
 			</ul>
 		</nav>
@@ -39,7 +41,7 @@
 		<header>
 			<h1>
 				<span><strong>Haxe</strong> ::config.zone::-Summit</span>
-				<img src="/images/logo-transparent.png" />
+				<img src="::rootPath::images/logo-transparent.png" />
 				<span class="year">::config.year::</span>
 			</h1>
 			<h3>::config.dates:: <span>@</span> ::config.town::</h3>

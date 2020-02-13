@@ -31,11 +31,11 @@ class Content {
 	public var talks:Array<Talk>;
 	public var id2speaker:Map<String, Speaker>;
 
-	function new() {
+	function new(config:Config) {
 		// Speakers
 		var parser = new JsonParser<Array<Speaker>>();
-		var path = "data/speakers.json";
-		parser.fromJson(File.getContent(path), path);
+		var fpath = Path.join([config.path, "speakers.json"]);
+		parser.fromJson(File.getContent(fpath), fpath);
 
 		if (parser.errors.length != 0) {
 			throw ErrorUtils.convertErrorArray(parser.errors);
@@ -50,7 +50,7 @@ class Content {
 
 		// Talks
 		talks = [];
-		var path = "data/talks";
+		var path = Path.join([config.path, "talks"]);
 		var delimiter = "\n---";
 
 		for (talk in FileSystem.readDirectory(path)) {
@@ -92,35 +92,25 @@ class Content {
 		}
 	}
 
-	public static function generate() {
-		var content = new Content();
-		var config = Config.get();
+	public static function generate(config:Config) {
+		var content = new Content(config);
 
 		// Index
 		Sys.println("Generating index page ...");
-		Utils.save("index.html", Views.index(content, config), ["index"]);
+		Utils.save(config, "", "index.html", Views.index(content, config), ["index"]);
 
 		// Speakers page
 		for (speaker in content.speakers) {
 			var warning = speaker.talks.length == 0 ? " WARNING no talk for the speaker" : "";
 			Sys.println('Generating speaker page for ${speaker.name} ...$warning');
-			Utils.save(Path.join(["speakers", speaker.id, "index.html"]), Views.speaker(speaker));
-		}
-
-		// Speakers picture
-		Sys.println("Copying speaker pictures ...");
-		var path = Path.join([config.outputFolder, "images/speakers"]);
-		if (!FileSystem.exists(path)) {
-			FileSystem.createDirectory(path);
-		}
-		for (entry in FileSystem.readDirectory("data/images/speakers")) {
-			File.copy(Path.join(["data/images/speakers", entry]), Path.join([path, entry]));
+			Utils.save(config, "../../", Path.join(["speakers", speaker.id, "index.html"]), Views.speaker(speaker), speaker.name);
 		}
 
 		// Talks
 		for (talk in content.talks) {
 			Sys.println('Generating talk page for ${talk.title} ...');
-			Utils.save(Path.join(["talks", talk.id, "index.html"]), Views.talk(talk, content.id2speaker[talk.speaker]));
+			var speaker = content.id2speaker[talk.speaker];
+			Utils.save(config, "../../", Path.join(["talks", talk.id, "index.html"]), Views.talk(talk, speaker), '${talk.title} by ${speaker.name}');
 		}
 	}
 }

@@ -58,7 +58,7 @@ header {
 	height: 330px;
 	padding-top: 40px;
 	background-color: #444;
-	background: url('/images/background.jpg') center;
+	background: url('../images/background.jpg') center;
 	background-size: cover;
 	color: white;
 	display: flex;

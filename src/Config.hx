@@ -1,3 +1,4 @@
+import haxe.io.Path;
 import json2object.ErrorUtils;
 import json2object.JsonParser;
 import sys.io.File;
@@ -17,7 +18,6 @@ class Config {
 	public var dates:String;
 	public var length:String;
 	public var mapUrl:String;
-	public var outputFolder:String;
 	public var price:String;
 	public var speakingLink:String;
 	public var speakingOpen:Bool;
@@ -25,22 +25,23 @@ class Config {
 	public var town:String;
 	public var year:Int;
 	public var zone:String;
+	@:jignored public var outputFolder:String;
+	@:jignored public var path:String;
 
-	static var _config:Config;
+	public static function get(path:String):Config {
+		var parser = new JsonParser<Config>();
+		var fpath = Path.join([path, "config.json"]);
+		parser.fromJson(File.getContent(fpath), fpath);
 
-	public static function get():Config {
-		if (_config == null) {
-			var parser = new JsonParser<Config>();
-			var path = "data/config.json";
-			parser.fromJson(File.getContent(path), path);
-
-			if (parser.errors.length != 0) {
-				throw ErrorUtils.convertErrorArray(parser.errors);
-			}
-
-			_config = parser.value;
+		if (parser.errors.length != 0) {
+			throw ErrorUtils.convertErrorArray(parser.errors);
 		}
 
-		return _config;
+		var config = parser.value;
+		config.zone = config.zone.toLowerCase();
+		config.outputFolder = Path.join(["out", config.zone, '${config.year}']);
+		config.path = path;
+
+		return config;
 	}
 }

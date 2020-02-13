@@ -38,6 +38,9 @@ jobs:
       run: haxe generate.hxml
       env:
         PATH: $PATH:haxe_20191217082701_67feacebc
+        
+    - name: Clean up gh-pages
+      run: git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" && git push github :gh-pages
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.2.1
@@ -45,3 +48,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: out
+        CLEAN: true

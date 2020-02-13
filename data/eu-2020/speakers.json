@@ -40,5 +40,12 @@
 		"name": "Dan Korostelev",
 		"title": "Developer at InnoGames and long-time Haxe contributor",
 		"bio": "nadako"
+	},
+	{
+		"id": "josefiene-pertosa",
+		"image": "josefiene-pertosa.jpg",
+		"name": "Josefiene Pertosa",
+		"title": "Haxe event manager",
+		"bio": "The non-threatening person in the room."
 	}
 ]

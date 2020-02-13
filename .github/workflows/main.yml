@@ -30,7 +30,7 @@ jobs:
         PATH: $PATH:haxe_20191217082701_67feacebc
     
     - name: Install dependencies
-      run: yes | haxelib install generate.hxml
+      run: echo "y" | haxelib install generate.hxml
       env:
         PATH: $PATH:haxe_20191217082701_67feacebc
     

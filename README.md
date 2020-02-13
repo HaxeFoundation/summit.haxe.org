@@ -1,5 +1,7 @@
 # Haxe Summit Website Generator
 
+![Deploy](https://github.com/ibilon/summit.haxe.org/workflows/Deploy/badge.svg)
+
 ## Building
 
 * You need Haxe and Haxelib.

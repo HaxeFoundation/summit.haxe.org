@@ -24,19 +24,14 @@ jobs:
     - name: Extract Haxe
       run: tar xvf haxe-4.0.5-linux64.tar.gz
     
-    - name: Add Haxe to path
-      uses: allenevans/set-env@v1.0.0
-      with:
-        PATH: $PATH:$(pwd)/haxe_20191217082701_67feacebc
-    
     - name: Setup Haxelib
-      run: haxelib setup haxelib
+      run: PATH:$PATH:haxe_20191217082701_67feacebc haxelib setup haxelib
     
     - name: Install dependencies
-      run: yes | haxelib install generate.hxml
+      run: yes | PATH:$PATH:haxe_20191217082701_67feacebc haxelib install generate.hxml
     
     - name: Generate website
-      run: haxe generate.hxml
+      run: PATH:$PATH:haxe_20191217082701_67feacebc haxe generate.hxml
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.2.1

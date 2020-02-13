@@ -16,7 +16,7 @@ jobs:
         persist-credentials: false
       
     - name: Install Neko
-      run: sudo apt update && sudo apt install neko
+      run: sudo apt update && sudo apt install neko --yes
     
     - name: Download Haxe
       run: wget https://github.com/HaxeFoundation/haxe/releases/download/4.0.5/haxe-4.0.5-linux64.tar.gz
@@ -28,7 +28,7 @@ jobs:
       run: haxe_20191217082701_67feacebc/haxelib setup haxelib
     
     - name: Install dependencies
-      run: haxe_20191217082701_67feacebc/haxelib install generate.hxml
+      run: yes | haxe_20191217082701_67feacebc/haxelib install generate.hxml
     
     - name: Generate website
       run: haxe_20191217082701_67feacebc/haxe generate.hxml

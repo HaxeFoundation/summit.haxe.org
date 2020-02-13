@@ -12,8 +12,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        persist-credentials: false
       
     - name: Install Neko
       run: sudo apt update && sudo apt install neko --yes
@@ -40,7 +38,7 @@ jobs:
         PATH: $PATH:haxe_20191217082701_67feacebc
         
     - name: Clean up gh-pages
-      run: git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" && git push github :gh-pages
+      run: git push origin :gh-pages
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.2.1

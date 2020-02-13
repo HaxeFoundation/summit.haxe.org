@@ -15,8 +15,17 @@ jobs:
       with:
         persist-credentials: false
       
-    - name: Install Haxe
-      run: sudo apt update && sudo apt install haxe --yes
+    - name: Install Neko
+      run: sudo apt update && sudo apt install neko --yes
+    
+    - name: Download Haxe 4.0.5
+      run: wget https://github.com/HaxeFoundation/haxe/releases/download/4.0.5/haxe-4.0.5-linux64.tar.gz
+    
+    - name: Extract Haxe
+      run: tar xvf haxe-4.0.5-linux64.tar.gz
+    
+    - name: Add Haxe to path
+      run: export PATH=$PATH:$(pwd)/haxe_20191217082701_67feacebc
     
     - name: Setup Haxelib
       run: haxelib setup haxelib

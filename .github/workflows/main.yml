@@ -25,13 +25,19 @@ jobs:
       run: tar xvf haxe-4.0.5-linux64.tar.gz
     
     - name: Setup Haxelib
-      run: PATH:$PATH:haxe_20191217082701_67feacebc haxelib setup haxelib
+      run: haxelib setup haxelib
+      env:
+        PATH: $PATH:haxe_20191217082701_67feacebc
     
     - name: Install dependencies
-      run: yes | PATH:$PATH:haxe_20191217082701_67feacebc haxelib install generate.hxml
+      run: yes | haxelib install generate.hxml
+      env:
+        PATH: $PATH:haxe_20191217082701_67feacebc
     
     - name: Generate website
-      run: PATH:$PATH:haxe_20191217082701_67feacebc haxe generate.hxml
+      run: haxe generate.hxml
+      env:
+        PATH: $PATH:haxe_20191217082701_67feacebc
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.2.1

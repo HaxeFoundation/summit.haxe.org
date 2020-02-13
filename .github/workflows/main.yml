@@ -25,7 +25,8 @@ jobs:
       run: tar xvf haxe-4.0.5-linux64.tar.gz
     
     - name: Add Haxe to path
-      run: export PATH=$PATH:$(pwd)/haxe_20191217082701_67feacebc
+      env:
+        PATH: $PATH:$(pwd)/haxe_20191217082701_67feacebc
     
     - name: Setup Haxelib
       run: haxelib setup haxelib

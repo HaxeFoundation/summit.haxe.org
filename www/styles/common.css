@@ -2,6 +2,7 @@ html {
 	height: 100%;
 	width: 100%;
 	font-family: Roboto;
+	background-color: rgb(20,20,25);
 }
 
 section ul:not([class]), section ol:not([class]) {
@@ -32,35 +33,87 @@ a[name] {
 }
 
 nav {
-	background-color: #0f0f0f;
+	background-color: #1a1a18;
 	transition: all 0.25s;
 	position: fixed;
 	z-index: 10;
 	color: white;
 	width: 100%;
+	height: 51px;
+}
+
+nav a.brand {
+	float: left;
+	margin-top: 15px;
+	margin-left: 20px;
 }
 
 nav ul {
-	padding: 15px 30px;
+	padding: 12px 0;
 	font-weight: 300;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 }
 
 nav ul li {
 	margin-left: 30px;
 	list-style: none;
-	text-transform: uppercase;
+	font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+nav ul li.divider {
+    background-color: transparent;
+    border-right: 1px solid #39332d;
+    margin: -8px 0 5px 31px;
+	height: 39px;
+}
+
+
+.brand.haxe-logo::after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 7px solid #13110f;
+    top: 0;
+}
+
+.brand.sub {
+    background: linear-gradient(to bottom, #39332d 50%,#2c2722 51%);
+    padding: 14px 20px 14px 20px;
+    margin: 0 10px 0 0;
+    font: bold 18px "arial black", "open sans";
+    line-height: 20px;
+	color: rgb(255,255,255);
+	height: 51px;
+}
+
+.brand.sub::before {
+    content: "..";
+    position: absolute;
+    margin-left: -33px;
+    margin-top: -28px;
+    line-height: 0px;
+    font: bold 40px "Open Sans", sans-serif;
+    letter-spacing: 0px;
+    color: #f1471d;
+}
+
+#main {
+	background-color: white;
 }
 
 header div {
 	width: 100%;
-	height: 800px;
+	height: calc(100vh - 120px);
+	max-height: 300px;
 	background-color: #444;
 	background: url('../images/background.jpg') center;
-	background-position-y: 20px;
+	background-position-y: center;
 	background-repeat: no-repeat;
-	/* background-size: cover; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -77,14 +130,10 @@ header h1 {
 	cursor: default;
 }
 
-header img {
-	width: 260px;
-	height: 440px;
-	margin-top: 420px;
-}
-
 header h1 img {
 	width: 260px;
+	height: 440px;
+	margin-top: -110px;
 	margin-left: 0.075em;
 	margin-right: 0.15em;
 }
@@ -111,7 +160,7 @@ header h1 .year {
 }
 
 header h3 {
-	margin-top: 3em;
+	margin: 2em 0 1em 0;
 	cursor: default;
 	text-align: center;
 	font-weight: 300;
@@ -128,7 +177,11 @@ a:hover {
 	text-decoration: underline;
 }
 
-a.big_button {
+div.big_button {
+	text-align: center;
+}
+
+div.big_button a {
 	white-space: nowrap;
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
@@ -140,9 +193,11 @@ a.big_button {
 	font-size: 28px;
 	font-weight: 300;
 	bottom: 0;
+	display: inline-block;
+	margin-top: 30px;
 }
 
-a.big_button:hover {
+div.big_button a:hover {
 	background: white;
 	color: #ff8c27;
 }
@@ -153,6 +208,18 @@ section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+section > div {
+	width: 800px;
+}
+
+section > div.center {
+	text-align: center;
+}
+
+section p {
+	text-align: justify;
 }
 
 section h1, section h2, section h3, section h4 {
@@ -243,36 +310,35 @@ section.intro {
 	padding-top: 50px;
 }
 
+.speakerdetails .speakerheader {
+	display: flex;
+	margin-bottom: 12px;
+	justify-content: center;
+}
+
+.speakerdetails .speakerheader .speakerinfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .speakerdetails .talks>li {
-	margin-left: 30px;
 	list-style-type: square;
 }
 
 .speakerdetails .talks>li h3 {
 	margin: 2em 0 1.5em;
 	text-align: left;
+	display: inline;
 }
 
-.speakerdetails .talks>li li {
-	margin-left: 30px;
-	margin-bottom: 0.75em;
-}
-
-.speakerdetails .talks>li li p {
-	margin-bottom: 0;
-}
-
-.speakerdetails .talks>li li:last-child {
-	margin-bottom: 1.5em;
-}
-
-.speakerdetails .talks>li>p {
-	margin-bottom: 1.5em;
+.speakerdetails .talks>li p {
+	display: inline;
 }
 
 section.footer {
 	padding: 10px;
-	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .eventbrite {
@@ -317,4 +383,17 @@ section.speakup>ul {
 section.speakup>ul>li {
 	vertical-align: top;
 	margin: 0 10px;
+}
+
+.copyright {
+    background: rgb(20,20,25);
+    color: #FFFFFF;
+	padding: 16px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.copyright a {
+    color: rgb(234,130,32);
 }

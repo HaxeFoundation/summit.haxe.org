@@ -1,22 +1,27 @@
 <section>
-	<h2>::talk.title::</h2>
+	<div>
+		<h2 style="margin-bottom: 16px;">::talk.title::</h2>
 
-	::if talk.time != ""::
-		<h3>::talk.time::</h3>
-	::end::
+		::if talk.time != ""::
+			<h3>::talk.time::</h3>
+		::end::
 
-	<p>
-		::new tink.template.Html(talk.content)::
-	</p>
+		<p>
+			::new tink.template.Html(talk.content)::
+		</p>
 
-	<h4>Presented by:</h4>
-	<div class="speakerdetails">
-		<a href="../../speakers/::speaker.id::/">
-			<div class="speakerimage">
-				<img src="../../images/speakers/::speaker.image::" />
+		<h4 style="text-align: left">Presented by:</h4>
+		<div class="speakerdetails">
+			<div class="speakerheader">
+				<div class="speakerimage">
+					<a href="../../speakers/::speaker.id::/"><img src="../../images/speakers/::speaker.image::" /></a>
+				</div>
+
+				<div class="speakerinfo">
+					<h2><a href="../../speakers/::speaker.id::/">::speaker.name::</a></h2>
+					<h3>::speaker.title::</h3>
+				</div>
 			</div>
-			<h2>::speaker.name::</h2>
-		</a>
-		<h3>::speaker.title::</h3>
+		</div>
 	</div>
 </section>

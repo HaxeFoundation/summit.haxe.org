@@ -8,7 +8,7 @@
 			<link rel="stylesheet" href="::rootPath::styles/::style::.css" />
 		::end::
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css" />
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<meta name="twitter:image" content="https://summit.haxe.org/::config.zone::/::config.year::/images/banner.png" />
@@ -25,6 +25,12 @@
 
 	<body>
 		<nav>
+			<a class="brand haxe-logo" href="https://haxe.org/">
+				<img alt="Haxe" src="::rootPath::images/haxe-logo-horizontal-on-dark.png" width="107" height="21">
+			</a>
+
+			<a class="brand sub lib" href="/" data-auto-route="true">SUMMIT</a>
+
 			<ul>
 				<li><a href="::rootPath::#joinus">Join us</a></li>
 				<li><a href="::rootPath::#speakers">Speakers</a></li>
@@ -35,18 +41,35 @@
 				<li><a href="::rootPath::#travel">Travel</a></li>
 				<li><a href="::rootPath::#schedule">Schedule</a></li>
 				<li><a href="mailto:events@haxe.org">Contact</a></li>
+
+				<li class="divider"></li>
+
+				<!--TODO add drop down menu -->
+				<li><a>Learn Haxe</a></li>
+				<li><a>Connect</a></li>
 			</ul>
 		</nav>
 
-		<header>
-			<div>
-				<h1>
-					<img src="::rootPath::images/banner.png" />
-				</h1>
-			</div>
-			<h3>::config.dates::</h3>
-		</header>
+		<div id="main">
+			<header>
+				<div>
+					<h1>
+						<img src="::rootPath::images/banner.png" />
+					</h1>
+				</div>
+				<h3>::config.dates::</h3>
+			</header>
 
-		::content::
+			::content::
+		</div>
+
+		<div class="copyright">
+			<p>
+				© 2020
+				<a href="https://haxe.org/foundation/" title="Haxe Foundation Website" class="hf-link">Haxe Foundation</a>
+				-
+				Report issues on <a href="https://github.com/ibilon/summit.haxe.org/issues" title="Summit website github" class="hf-link">Github</a>
+			</p>
+		</div>
 	</body>
 </html>

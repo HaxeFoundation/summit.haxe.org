@@ -31,6 +31,11 @@ jobs:
       run: echo "y" | haxelib install generate.hxml
       env:
         PATH: $PATH:haxe_20191217082701_67feacebc
+
+    - name: Include old summit websites (eu 2017, us 2018 & 2019)
+      run: |
+        git clone https://github.com/HaxeSummit2017/website.git old_website
+        mv old_website/docs out
     
     - name: Generate website
       run: haxe generate.hxml

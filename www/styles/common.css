@@ -69,18 +69,6 @@ nav ul li.divider {
 	height: 39px;
 }
 
-
-.brand.haxe-logo::after {
-    content: " ";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 7px solid #13110f;
-    top: 0;
-}
-
 .brand.sub {
     background: linear-gradient(to bottom, #39332d 50%,#2c2722 51%);
     padding: 14px 20px 14px 20px;
@@ -168,7 +156,7 @@ section {
 }
 
 section > div {
-	width: 800px;
+	max-width: 100%;
 }
 
 section > div.center {
@@ -375,4 +363,93 @@ section.speakup>ul>li {
 
 iframe {
 	border: 0;
+}
+
+@media only screen and (min-width: 971px) {
+	.brand.haxe-logo::after {
+		content: " ";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top: 22px solid transparent;
+		border-bottom: 22px solid transparent;
+		border-left: 7px solid #13110f;
+		top: 0;
+	}
+}
+
+@media only screen and (min-width: 801px) {
+	section > div {
+		width: 800px;
+	}
+}
+
+@media only screen and (max-width: 970px) {
+	.brand.sub {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	nav a.brand {
+		margin-left: 6px;
+	}
+
+	nav ul {
+		position: relative;
+		left: -20px;
+	}
+
+	nav ul li {
+		margin-left: 14px;
+	}
+
+	nav ul li.divider {
+		margin-left: 14px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	section > div p {
+		padding: 6px;
+	}
+
+	section > div div.breadcrumb {
+		padding-left: 6px;
+	}
+}
+
+@media only screen and (max-width: 690px) {
+	nav > a {
+		display: none;
+	}
+
+	nav ul {
+		left: 0;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	nav {
+		height: auto;
+	}
+
+	nav ul {
+		flex-wrap: wrap;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.speakerdetails .speakerheader {
+		display: block;
+		text-align: center;
+	}
+
+	section h1 {
+		font-size: 48px;
+	}
+
+	div.big_button a {
+		padding: 0.5em;
+	}
 }

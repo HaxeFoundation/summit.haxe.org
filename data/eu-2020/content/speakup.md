@@ -1,11 +1,12 @@
-Are you:
+Want to join this illustrious speaker line up? Don't hesistate to contact us! It doesn't matter if you've been using Haxe for years or only recently heard about it.
 
-* doing something exciting with Haxe that you would love to tell us about
-* solving a pesky problem (workflows and tooling, anyone?);
-* looking to pass on some Haxian wisdom?
+Here are some ideas for talks:
 
-Then we would love to hear from you!
+* Present your game
+* Introduce us to the library you've created
+* Show us that cool macro that makes life so much easier
+* Tell us about how Haxe is used in your company
+* Walk us through implementing something as part of a workshop
+* Something else...?
 
-We are interested in quick showcases, more thorough presentations and full workshops.
-
-Not sure if you should get up on that stage? Apply anyway! We will help you figure it out.
+If you aren't quite sure, contact us anyway and we'll figure out it together!

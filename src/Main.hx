@@ -12,7 +12,7 @@ class Main {
 		// Redirect root url to current event
 		Sys.println('++ root ++\nGenerating index page ...');
 		var current = Config.get(Path.join(["data", File.getContent("data/current.txt").trim()]));
-		Utils.save(current, '${current.zone}/${current.year}/', "../../index.html", Views.redirection('${current.zone}/${current.year}/'));
+		File.saveContent("out/index.html", Utils.minifyHtml(Views.redirection('${current.zone}/${current.year}/')));
 
 		// Make sure the output folder exists
 		FileSystem.createDirectory("out");

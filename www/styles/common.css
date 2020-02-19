@@ -441,9 +441,28 @@ iframe {
 	nav ul {
 		flex-wrap: wrap;
 	}
+
+	section.speakers > ul, section.speakers > ul > li {
+		margin: 0;
+	}
+}
+
+@media only screen and (max-width: 490px) {
+	section.speakers > ul > li {
+		width: 210px;
+	}
+
+	.speakerimage {
+		width: 140px;
+		height: 140px;
+	}
 }
 
 @media only screen and (max-width: 450px) {
+	section.speakers > ul > li {
+		width: 175px;
+	}
+
 	.speakerdetails .speakerheader {
 		display: block;
 		text-align: center;

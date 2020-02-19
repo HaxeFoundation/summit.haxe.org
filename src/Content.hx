@@ -31,6 +31,10 @@ class Content {
 	public var talks:Array<Talk>;
 	public var id2speaker:Map<String, Speaker>;
 
+	public var intro:String;
+	public var speakup:String;
+	public var travel:String;
+
 	function new(config:Config) {
 		// Speakers
 		var parser = new JsonParser<Array<Speaker>>();
@@ -90,6 +94,11 @@ class Content {
 				}
 			}
 		}
+
+		// Index page sections
+		intro = Markdown.markdownToHtml(File.getContent(Path.join([config.path, "content/intro.md"])));
+		speakup = Markdown.markdownToHtml(File.getContent(Path.join([config.path, "content/speakup.md"])));
+		travel = Markdown.markdownToHtml(File.getContent(Path.join([config.path, "content/travel.md"])));
 	}
 
 	public static function generate(config:Config) {

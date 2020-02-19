@@ -16,7 +16,6 @@ class Config {
 	public var earlyBirdEndDate:String;
 	public var eventBriteId:String;
 	public var dates:String;
-	public var length:String;
 	public var mapUrl:String;
 	public var price:String;
 	public var speakingLink:String;

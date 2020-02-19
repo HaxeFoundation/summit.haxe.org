@@ -24,7 +24,6 @@ Create the file `data/eventId/config.json` with the following content:
 * `earlyBirdEndDate`: The end date for the early bird tickets.
 * `eventBriteId`: The eventbrite event id.
 * `dates`: The event dates, `month start-end`.
-* `length`: The number of days for the event, in english.
 * `mapUrl`: Iframe url for the venu map.
 * `price`: Full ticket price, including the money symbol.
 * `speakingLink`: Link where to apply for a talk.
@@ -33,6 +32,14 @@ Create the file `data/eventId/config.json` with the following content:
 * `town`: The venue's town name.
 * `year`: The event year.
 * `zone`: The event zone, eg `US`, `EU`...
+
+### Index sections
+
+Create the following files to add their content into the corresponding index section:
+
+* `data/eventId/content/intro.md`
+* `data/eventId/content/speakup.md`
+* `data/eventId/content/travel.md`
 
 ### Adding a speaker
 

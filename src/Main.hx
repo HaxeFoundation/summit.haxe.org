@@ -9,13 +9,13 @@ class Main {
 		Sys.println("== summit.haxe.org generation ==");
 		var start = Date.now().getTime();
 
+		// Make sure the output folder exists
+		FileSystem.createDirectory("out");
+
 		// Redirect root url to current event
 		Sys.println('++ root ++\nGenerating index page ...');
 		var current = Config.get(Path.join(["data", File.getContent("data/current.txt").trim()]));
 		File.saveContent("out/index.html", Utils.minifyHtml(Views.redirection('${current.zone}/${current.year}/')));
-
-		// Make sure the output folder exists
-		FileSystem.createDirectory("out");
 
 		for (event in Utils.listDirectories("data")) {
 			Sys.println('++ $event ++');

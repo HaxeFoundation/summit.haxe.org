@@ -108,64 +108,20 @@ nav ul li.divider {
 
 header div {
 	width: 100%;
-	height: calc(100vh - 120px);
-	max-height: 300px;
+	height: 300px;
+	min-height: 300px;
 	background-color: #444;
 	background: url('../images/background.jpg') center;
 	background-position-y: center;
 	background-repeat: no-repeat;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	position: relative;
-}
-
-header h1 {
-	display: flex;
-	justify-content: center;
 	align-items: flex-end;
-	line-height: 1;
-	font-size: 120px;
-	font-weight: 300;
-	cursor: default;
 }
 
-header h1 img {
+header img {
 	width: 260px;
 	height: 440px;
-	margin-top: -110px;
-	margin-left: 0.075em;
-	margin-right: 0.15em;
-}
-
-header h1 span:first-child {
-	position: relative;
-	margin-left: 2.5em;
-	margin-right: 0.5em;
-	text-transform: uppercase;
-	font-size: 0.2em;
-	letter-spacing: 0.28em;
-}
-
-header h1 span:first-child strong {
-	letter-spacing: 0;
-	margin-left: -0.05em;
-	font-size: 3em;
-	font-weight: 900;
-	display: block;
-}
-
-header h1 .year {
-	line-height: 0.75em;
-}
-
-header h3 {
-	margin: 2em 0 1em 0;
-	cursor: default;
-	text-align: center;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 0.5em;
+	margin: 0 auto -20px auto;
 }
 
 a {
@@ -204,6 +160,7 @@ div.big_button a:hover {
 
 section {
 	overflow: hidden;
+	padding-top: 40px;
 	padding-bottom: 50px;
 	display: flex;
 	flex-direction: column;
@@ -224,6 +181,7 @@ section p {
 
 section h1, section h2, section h3, section h4 {
 	padding: 0.5em;
+	padding-top: 0;
 	text-align: center;
 	font-weight: 900;
 }
@@ -310,6 +268,10 @@ section.intro {
 	padding-top: 50px;
 }
 
+.breadcrumb {
+	margin-bottom: 30px;
+}
+
 .speakerdetails .speakerheader {
 	display: flex;
 	margin-bottom: 12px;
@@ -334,6 +296,19 @@ section.intro {
 
 .speakerdetails .talks>li p {
 	display: inline;
+}
+
+.speakerdetails h2.talkslist {
+	text-align: left;
+	margin-top: 16px;
+}
+
+.talkpage h2 {
+	margin-bottom: 16px;
+}
+
+.talkpage h4 {
+	text-align: left;
 }
 
 section.footer {
@@ -396,4 +371,8 @@ section.speakup>ul>li {
 
 .copyright a {
     color: rgb(234,130,32);
+}
+
+iframe {
+	border: 0;
 }

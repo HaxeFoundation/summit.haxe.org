@@ -1,6 +1,6 @@
 <section class="speakerdetails">
 	<div>
-		<div style="margin-bottom: 30px">
+		<div class="breadcrumb">
 			<a href="../../">Index</a> &gt; <a href="./">::speaker.name::</a>
 		</div>
 
@@ -20,7 +20,7 @@
 		</p>
 
 		::if speaker.talks.length > 0::
-			<h2 style="text-align: left; margin-top: 16px">Talks:</h2>
+			<h2 class="talkslist">Talks:</h2>
 			<ul class="talks">
 				::for talk in speaker.talks::
 					<li>

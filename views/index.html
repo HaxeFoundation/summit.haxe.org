@@ -75,12 +75,6 @@
 		::if config.stage == "EarlyPlanning"::
 			Tickets aren't open yet, check back later.
 		::else if config.stage == "TicketsOpen"::
-			<p>
-				The full ticket price will be ::config.price:: so take advantage of our Early bird pricing now!
-				<br />
-				Early bird pricing will be until ::config.earlyBirdEndDate::.
-			</p>
-
 			<div id="eventbrite-widget-container-::config.eventBriteId::" class="eventbrite"></div>
 
 			<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>

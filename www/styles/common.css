@@ -348,6 +348,14 @@ section.speakup>ul>li {
 	margin: 0 10px;
 }
 
+section#travel h1 {
+	padding-bottom: 0;
+}
+
+section#travel h2 {
+	padding-top: 1em;
+}
+
 .copyright {
     background: rgb(20,20,25);
     color: #FFFFFF;

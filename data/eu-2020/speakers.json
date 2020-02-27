@@ -1,7 +1,7 @@
 [
 	{
 		"id": "nicolas-cannasse",
-		"image": "nicolas-cannasse.png",
+		"image": "nicolas-cannasse.jpg",
 		"name": "Nicolas Cannasse",
 		"title": "Director of the Haxe Foundation",
 		"bio": "Nicolas is the original creator of the Haxe programming language and director of the Haxe Foundation. All he wanted to do was develop games, but that somehow lead to the creation of the entire Haxe ecosystem. Nowadays, he and his fellow developers at Shiro Games use Haxe to create titles such as Evoland, Northgard and Darksburg."
@@ -15,28 +15,28 @@
 	},
 	{
 		"id": "aleksandr-kuzmenko",
-		"image": "aleksandr-kuzmenko.png",
+		"image": "aleksandr-kuzmenko.jpg",
 		"name": "Aleksandr Kuzmenko",
 		"title": "Maintainer of the Haxe Compiler",
 		"bio": "From Russia with love comes Aleksandr, a long-term Haxe user who in 2019 joined the Haxe team in official capicity. He enjoys traveling and has a soft spot for PHP, which lead him to rewrite the Haxe/PHP backend. If something is broken and it isn't Simon's fault, it's probably his."
 	},
 	{
 		"id": "robert-konrad",
-		"image": "robert-konrad.png",
+		"image": "robert-konrad.jpg",
 		"name": "Robert Konrad",
 		"title": "Developer at Deck 13 and creator of Kha",
 		"bio": "Robert is a modest human being but was cursed with a mission to overcome the challenges of high-performance cross-platform development of multimedia applications. He is suffering in silence from the intricate details of different system-level APIs and hardware quirks but nonetheless appears to be mentally stable most of the time."
 	},
 	{
 		"id": "juraj-kirchheim",
-		"image": "juraj-kirchheim.jpeg",
+		"image": "juraj-kirchheim.jpg",
 		"name": "Juraj Kirchheim",
 		"title": "Haxe Addict",
 		"bio": "Juraj has started his journey through Haxe a little over ten years ago. Absorbed by this adventure, he never found the time to learn how to write short bios."
 	},
 	{
 		"id": "dan-korostelev",
-		"image": "dan-korostelev.png",
+		"image": "dan-korostelev.jpg",
 		"name": "Dan Korostelev",
 		"title": "Developer at InnoGames and long-time Haxe contributor",
 		"bio": "Dan, commonly referred to as nadako, has been a long-time contributor to the Haxe compiler. Ever since joining InnoGames in 2018, he has been focused on making the Haxe experience for his colleagues as pleasant as possible. He is also the original author of the vshaxe project."

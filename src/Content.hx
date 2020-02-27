@@ -9,7 +9,7 @@ using StringTools;
 class News {
 	public var date:String;
 	public var title:String;
-	public var url:String;
+	@:optional public var url:String;
 }
 
 class Speaker {
@@ -116,7 +116,11 @@ class Content {
 			throw ErrorUtils.convertErrorArray(parser.errors);
 		}
 
-		news = Markdown.markdownToHtml(parser.value.map(n -> '* ${n.date}: [${n.title}](${n.url})').join("\n"));
+		news = Markdown.markdownToHtml(parser.value.map(n -> if (n.url != null) {
+			'* ${n.date}: [${n.title}](${n.url})';
+		} else {
+			'* ${n.date}: ${n.title}';
+		}).join("\n"));
 
 		FileSystem.createDirectory(Path.join([config.outputFolder, "rss"]));
 		File.saveContent(Path.join([config.outputFolder, "rss", "index.html"]), Views.rss(config, parser.value));

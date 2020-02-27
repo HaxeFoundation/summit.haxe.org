@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
-    <channel>
-        <atom:link type="application/rss+xml" href="https://summit.haxe.org/::config.zone::/::config.year::/rss/" rel="self"/>
-        <title>Latest ::config.zone:: Haxe Summit ::config.year:: news</title>
-        <link>https://summit.haxe.org/::config.zone::/::config.year::/</link>
-        <description>The latest news about the ::config.zone:: Haxe Summit ::config.year::.</description>
-        <generator>haxe</generator>
-        <language>en</language>
+	<channel>
+		<atom:link type="application/rss+xml" href="https://summit.haxe.org/::config.zone::/::config.year::/rss/" rel="self"/>
+		<title>Latest ::config.zone:: Haxe Summit ::config.year:: news</title>
+		<link>https://summit.haxe.org/::config.zone::/::config.year::/</link>
+		<description>The latest news about the ::config.zone:: Haxe Summit ::config.year::.</description>
+		<generator>haxe</generator>
+		<language>en</language>
 
-        ::for n in news::
-            <item>
+		::for n in news::
+			<item>
 				<title>::n.title::</title>
 				<pubDate>::n.date::</pubDate>
-                <link>::n.url::</link>
-                <guid>::n.url::</guid>
-            </item>
-        ::end::
-    </channel>
+
+				::if n.url != null::
+					<link>::n.url::</link>
+					<guid>::n.url::</guid>
+				::else::
+					<link>https://summit.haxe.org/::config.zone::/::config.year::/</link>
+					<guid>https://summit.haxe.org/::config.zone::/::config.year::/</guid>
+				::end::
+			</item>
+		::end::
+	</channel>
 </rss>

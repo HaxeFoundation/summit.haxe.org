@@ -50,7 +50,7 @@ To add an entry add at the beginning (the news need to be manually sorted anti-c
 {
 	"date": "the date when adding the entry",
 	"title: "the link's text",
-	"url": "the link's url"
+	"url": "Optional: the link's url"
 }
 ```
 

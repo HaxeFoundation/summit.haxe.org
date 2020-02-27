@@ -1,12 +1,8 @@
 html {
 	height: 100%;
 	width: 100%;
-	font-family: Roboto;
 	background-color: rgb(20,20,25);
-}
-
-section ul:not([class]), section ol:not([class]) {
-	margin: 1em;
+	font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -86,7 +82,6 @@ nav ul li.divider {
     margin-top: -28px;
     line-height: 0px;
     font: bold 40px "Open Sans", sans-serif;
-    letter-spacing: 0px;
     color: #f1471d;
 }
 
@@ -127,23 +122,23 @@ div.big_button {
 
 div.big_button a {
 	white-space: nowrap;
-	text-transform: uppercase;
-	letter-spacing: 0.15em;
 	background: #ff8c27;
 	color: white;
 	transition: all 0.25s;
 	text-decoration: none;
-	padding: 0.5em 1.5em;
-	font-size: 28px;
-	font-weight: 300;
+	padding: 0.33em 1.66em;
+	font-size: 26.5px;
 	bottom: 0;
 	display: inline-block;
 	margin-top: 30px;
+	border: 2px solid transparent;
+	border-radius: 9px;
 }
 
 div.big_button a:hover {
 	background: white;
 	color: #ff8c27;
+	border: 2px solid #ff8c27;
 }
 
 section {
@@ -171,7 +166,7 @@ section h1, section h2, section h3, section h4 {
 	padding: 0.5em;
 	padding-top: 0;
 	text-align: center;
-	font-weight: 900;
+	font-weight: 500;
 }
 
 section h1 a[href^="#"], section h2 a[href^="#"], section h3 a[href^="#"], section h4 a[href^="#"] {
@@ -189,10 +184,10 @@ section h1 a[href^="#"]:before, section h2 a[href^="#"]:before, section h3 a[hre
 
 section h1 {
 	color: #ff8c27;
-	font-size: 72px;
+	font-size: 36px;
+	line-height: 40px;
 	font-weight: 300;
 	text-transform: uppercase;
-	letter-spacing: 0.15em;
 }
 
 section>blockquote, section>p {
@@ -299,11 +294,6 @@ section.intro {
 	text-align: left;
 }
 
-section.footer {
-	padding: 10px;
-	padding-bottom: 20px;
-}
-
 .eventbrite {
 	width: 100%;
 	max-width: 750px;
@@ -311,7 +301,6 @@ section.footer {
 
 section.speakers>ul {
 	text-align: center;
-	padding-top: 50px;
 }
 
 section.speakers>ul>li {
@@ -319,17 +308,16 @@ section.speakers>ul>li {
 	display: inline-block;
 	vertical-align: top;
 	width: 240px;
-	margin: 0 10px;
+	margin: 0 10px 1em 0;
 }
 
 .speakerimage {
 	overflow: hidden;
 	display: inline-block;
-	background: crimson;
+	background: #fff;
 	width: 160px;
 	height: 160px;
 	border-radius: 160px;
-	border: 8px solid #ff8c27;
 }
 
 .speakerimage img {
@@ -359,7 +347,8 @@ section#travel h2 {
 .copyright {
     background: rgb(20,20,25);
     color: #FFFFFF;
-	padding: 16px;
+    padding-top: 40px;
+    padding-bottom: 50px;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
@@ -419,7 +408,11 @@ iframe {
 
 @media only screen and (max-width: 800px) {
 	section > div p {
-		padding: 6px;
+		padding: 0 1em;
+	}
+	
+	section ul li {
+		margin-left:3em;
 	}
 
 	section > div div.breadcrumb {
@@ -451,7 +444,7 @@ iframe {
 	}
 
 	section.speakers > ul, section.speakers > ul > li {
-		margin: 0;
+		margin: 0 0 1em 0;
 	}
 }
 

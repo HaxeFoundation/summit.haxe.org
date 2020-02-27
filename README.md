@@ -41,6 +41,19 @@ Create the following files to add their content into the corresponding index sec
 * `data/eventId/content/speakup.md`
 * `data/eventId/content/travel.md`
 
+### News
+
+The news are stored in `data/eventId/news.json`, the empty file should be `[]`.
+
+To add an entry add at the beginning (the news need to be manually sorted anti-chronogically):
+```json
+{
+	"date": "the date when adding the entry",
+	"title: "the link's text",
+	"url": "the link's url"
+}
+```
+
 ### Adding a speaker
 
 Edit `data/eventId/speakers.json` and add an entry:

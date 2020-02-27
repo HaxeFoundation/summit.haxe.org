@@ -7,6 +7,8 @@ class Views {
 
 	@:template public static function redirection(redirectionLink:String):Html;
 
+	@:template public static function rss(config:Config, news:Array<Content.News>):Html;
+
 	@:template public static function speaker(speaker:Content.Speaker):Html;
 
 	@:template public static function talk(talk:Content.Talk, speaker:Content.Speaker):Html;

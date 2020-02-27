@@ -65,6 +65,10 @@ nav ul li.divider {
 	height: 39px;
 }
 
+section ul li {
+    margin-left:2em;
+}
+
 .brand.sub {
     background: linear-gradient(to bottom, #39332d 50%,#2c2722 51%);
     padding: 14px 20px 14px 20px;
@@ -411,10 +415,6 @@ iframe {
 		padding: 0 1em;
 	}
 	
-	section ul li {
-		margin-left:3em;
-	}
-
 	section > div div.breadcrumb {
 		padding-left: 6px;
 	}

@@ -1,4 +1,6 @@
-Want to join this illustrious speaker line up? Don't hesistate to contact us! It doesn't matter if you've been using Haxe for years or only recently heard about it.
+Want to join this speaker line up? Don't hesistate to contact us! It doesn't matter if you've been using Haxe for years or only recently heard about it.
+
+<br/>
 
 Here are some ideas for talks:
 

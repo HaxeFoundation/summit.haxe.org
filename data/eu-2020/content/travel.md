@@ -10,6 +10,8 @@ Linz am Rhein is easily reachable by public transport from multiple airports:
 
 There is a direct train route from M&ouml;nchengladbach &rarr; Cologne &rarr; Bonn &rarr; Linz am Rhein and in the other direction from Koblenz &rarr; Linz am Rhein.
 
+<br/>
+
 There are various very beautiful routes into Koblenz from the south. Cologne has direct connections from many cities such as Frankfurt, Amsterdam, Berlin, Hamburg and Paris.
 
 ## By car

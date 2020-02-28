@@ -49,7 +49,7 @@ jobs:
         git init
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/summit.haxe.org
+        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/HaxeFoundation/summit.haxe.org
         git checkout -b gh-pages
         echo "summit.haxe.org" > CNAME
         git add -A .
@@ -63,7 +63,7 @@ jobs:
         git init
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/staging.summit.haxe.org
+        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/HaxeFoundation/staging.summit.haxe.org
         git checkout -b gh-pages
         git add -A .
         git commit -m " Deploying staging to gh-pages"

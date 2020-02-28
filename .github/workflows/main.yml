@@ -2,31 +2,32 @@ name: Deploy
 
 on:
   push:
-    branches: 
+    branches:
       - master
+      - staging
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      
+
     - name: Install Neko
       run: sudo apt update && sudo apt install neko --yes
-    
+
     - name: Download Haxe 4.0.5
       run: wget https://github.com/HaxeFoundation/haxe/releases/download/4.0.5/haxe-4.0.5-linux64.tar.gz
-    
+
     - name: Extract Haxe
       run: tar xvf haxe-4.0.5-linux64.tar.gz
-    
+
     - name: Setup Haxelib
       run: haxelib setup haxelib
       env:
         PATH: $PATH:haxe_20191217082701_67feacebc
-    
+
     - name: Install dependencies
       run: echo "y" | haxelib install generate.hxml
       env:
@@ -36,21 +37,35 @@ jobs:
       run: |
         git clone https://github.com/HaxeSummit2017/website.git old_website
         mv old_website/docs out
-    
+
     - name: Generate website
       run: haxe generate.hxml
       env:
         PATH: $PATH:haxe_20191217082701_67feacebc
-    
-    - name: Deploy to GitHub Pages
+
+    - name: Deploy master to GitHub Pages
       run: |
         cd out
         git init
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/summit.haxe.org
         git checkout -b gh-pages
         echo "summit.haxe.org" > CNAME
         git add -A .
-        git commit -m " Deploying to gh-pages"
+        git commit -m " Deploying master to gh-pages"
         git push -u origin gh-pages --force
+      if: github.ref == 'refs/heads/master'
+
+    - name: Deploy staging to GitHub Pages
+      run: |
+        cd out
+        git init
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/staging.summit.haxe.org
+        git checkout -b gh-pages
+        git add -A .
+        git commit -m " Deploying staging to gh-pages"
+        git push -u origin gh-pages --force
+      if: github.ref == 'refs/heads/staging'

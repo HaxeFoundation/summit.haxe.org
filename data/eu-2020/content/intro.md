@@ -1,4 +1,4 @@
-The Haxe Summit comes back to Europe! In **October**, Haxe users from all across the world will gather in **Linz am Rhein, Germany**. <a href="#tickets">Get your tickets now</a> and join us!
+The Haxe Summit 2020 is an online conference taking place in **October**.
 
 <br/>
 
@@ -6,4 +6,4 @@ We welcome people from all backgrounds. Whether you develop games, websites, app
 
 <br />
 
-But we don't sneer at non-developers either, so if you're just curious what this Haxe technology is all about, make your way to the EU Haxe Summit 2020 and find out!
+But we don't sneer at non-developers either, so if you're just curious what this Haxe technology is all about, mark October 14th to 17th in your calendar and make sure to check it out!

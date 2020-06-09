@@ -1,0 +1,1063 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: Roboto;
+}
+section ul:not([class]),
+section ol:not([class]) {
+  margin: 1em;
+}
+section hr {
+  display: none;
+}
+section code {
+  text-transform: none !important;
+  font: inherit;
+}
+input[name="current-speaker"] {
+  display: none;
+}
+main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+#nospeaker:not(:checked) ~ main {
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  font-weight: 300;
+}
+.nodisplay {
+  display: none !important;
+}
+a[name] {
+  position: relative;
+  top: -49px;
+  background: red;
+  height: 0;
+  display: block;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: inherit;
+}
+nav {
+  background-color: #1c0308;
+  transition: all .25s;
+  position: fixed;
+  z-index: 10;
+  color: white;
+  width: 100%;
+}
+nav.transparent {
+  background-color: transparent;
+  background-image: linear-gradient(0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+nav.transparent a[href="/#start"] {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+nav ul {
+  padding: 15px 30px;
+  font-weight: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+nav ul li {
+  margin-left: 30px;
+  list-style: none;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  nav ul {
+    padding: 15px;
+  }
+  nav ul li {
+    margin-left: 15px;
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    font-size: 10px;
+  }
+}
+@media (max-width: 440px) {
+  nav {
+    font-size: 9px;
+  }
+  nav ul {
+    padding: 10px;
+  }
+  nav ul li {
+    margin-left: 10px;
+  }
+  nav ul li:last-child {
+    display: none;
+  }
+}
+nav a[href="/#start"] {
+  transition: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 5px;
+  font-size: 0;
+  display: block;
+}
+nav a[href="/#start"] img {
+  height: 100%;
+}
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+section.tickets h1:before {
+  content: 'Sold Out';
+  color: rgba(220, 20, 60, 0.8);
+  text-transform: none;
+  letter-spacing: 0;
+  display: block;
+  font-weight: 900;
+  font-size: .7em;
+  background-color: rgba(255, 255, 255, 0.65);
+  z-index: 1;
+  border: 5px dashed rgba(220, 20, 60, 0.8);
+  padding: 0 10px;
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-60%) rotate(-30deg) translateY(0px);
+}
+section.tickets p {
+  text-align: center;
+  margin-top: 30px;
+}
+section.tickets .countdown {
+  margin-top: 2em;
+  width: 400px;
+  height: 400px;
+  border-radius: 400px;
+  background: crimson;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.tickets .countdown:before {
+  font-family: FontAwesome;
+  content: '\f252';
+  color: white;
+  font-size: 120px;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: pulse;
+}
+section.tickets .countdown .components {
+  font-size: 72px;
+  color: white;
+  font-weight: 100;
+}
+section.tickets .countdown:not(.nodisplay) .hours:after,
+section.tickets .countdown .minutes:after {
+  animation-duration: .5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: pulse;
+  content: ':';
+}
+header {
+  width: 100%;
+  height: calc(100vh - 120px);
+  max-height: 80vw;
+  background-color: #444;
+  background: url('backgrounds/bg.jpg') center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 1;
+  font-size: 120px;
+  font-weight: 100;
+  cursor: default;
+}
+header h1 img {
+  height: 1.25em;
+  margin-left: .075em;
+  margin-right: .15em;
+}
+header h1 span:first-child {
+  position: relative;
+  margin-left: 3em;
+  text-transform: uppercase;
+  font-size: .2em;
+  letter-spacing: 0.75em;
+}
+header h1 span:first-child:before {
+  content: '×××';
+  font-weight: 900;
+  color: white;
+  position: absolute;
+  font-size: 2em;
+  padding-left: .15em;
+  letter-spacing: 0.15em;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+  display: block;
+}
+header h1 span:first-child strong {
+  letter-spacing: 0;
+  margin-left: -0.05em;
+  font-size: 3em;
+  font-weight: 900;
+  display: block;
+}
+header h1 .year {
+  line-height: .75em;
+}
+@media (max-width: 800px) {
+  header h1 {
+    font-size: 72px;
+  }
+}
+@media (max-width: 460px) {
+  header h1 {
+    font-size: 50px;
+  }
+}
+header h3 {
+  margin-top: 3em;
+  cursor: default;
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+}
+@media (max-width: 600px) {
+  header h3 {
+    letter-spacing: .2em;
+  }
+}
+header a.powered-by {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all .25s;
+  transform-origin: 100% 100%;
+}
+@media (max-width: 600px) {
+  header a.powered-by {
+    display: none;
+  }
+}
+@media (max-height: 400px) {
+  header a.powered-by {
+    display: none;
+  }
+}
+header a.powered-by * {
+  transition: inherit;
+}
+header a.powered-by:hover {
+  transform: scale(1.5);
+}
+header a.powered-by:hover img {
+  filter: none;
+}
+header a.powered-by img {
+  margin-top: .05em;
+  display: block;
+  filter: saturate(0) contrast(0);
+  width: 120px;
+}
+header a.tickets {
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  position: absolute;
+  background: crimson;
+  color: white;
+  transition: all .25s;
+  text-decoration: none;
+  padding: .5em 1.5em;
+  font-size: 28px;
+  font-weight: 100;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  left: 50%;
+}
+header a.tickets:hover {
+  background: white;
+  color: crimson;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+section {
+  overflow: hidden;
+  user-select: auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section h1,
+section h2,
+section h3,
+section h4 {
+  padding: .5em;
+  text-align: center;
+  font-weight: 900;
+}
+section h1 a[href^="#"],
+section h2 a[href^="#"],
+section h3 a[href^="#"],
+section h4 a[href^="#"] {
+  position: relative;
+}
+section h1 a[href^="#"]:before,
+section h2 a[href^="#"]:before,
+section h3 a[href^="#"]:before,
+section h4 a[href^="#"]:before {
+  transition: all .25s;
+  content: '#';
+  display: block;
+  position: absolute;
+  right: 100%;
+  opacity: 0;
+}
+section h1 a[href^="#"]:hover,
+section h2 a[href^="#"]:hover,
+section h3 a[href^="#"]:hover,
+section h4 a[href^="#"]:hover {
+  text-decoration: none;
+}
+section h1 a[href^="#"]:hover:before,
+section h2 a[href^="#"]:hover:before,
+section h3 a[href^="#"]:hover:before,
+section h4 a[href^="#"]:hover:before {
+  opacity: 1;
+}
+section h1 {
+  color: #2a040c;
+  font-size: 72px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+@media (max-width: 600px) {
+  section h1 {
+    font-size: 48px;
+    margin-top: 36px;
+  }
+}
+section > blockquote,
+section > p {
+  max-width: 760px;
+  margin: 1em;
+  margin-top: 0;
+}
+section > blockquote a,
+section > p a {
+  font-weight: 900;
+}
+section blockquote {
+  background: #f0eced;
+  padding: 1em;
+  border-left: 0.5em solid #38050f;
+}
+section:nth-of-type(2n+1) {
+  background: #eeeeee;
+}
+section:nth-of-type(2n) {
+  background: white;
+}
+section.partners > h2 {
+  font-size: 50px;
+}
+section.partners ol.tiers {
+  max-width: 960px;
+  padding: 25px;
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+section.partners ol.tiers > li {
+  list-style: none;
+  width: 200px;
+  background: #eeeeee;
+  border: 5px solid #404040;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+}
+section.partners ol.tiers > li ul {
+  font-size: 85%;
+  margin: 20px 15px 20px 30px;
+  list-style-type: square;
+}
+section.partners ol.tiers > li h2 {
+  padding: 0;
+  font-size: 50px;
+  line-height: 3em;
+  font-weight: 100;
+  background: black;
+  text-transform: uppercase;
+}
+section.partners ol.tiers > li h4 {
+  position: absolute;
+  width: 200px;
+  font-weight: 300;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: white;
+  background: #404040;
+  text-align: center;
+  top: 10px;
+  right: -70px;
+  transform-origin: center;
+  transform: rotate(35deg);
+}
+section.partners ol.tiers > li.gold h2 {
+  color: goldenrod;
+}
+section.partners ol.tiers > li.silver h2 {
+  color: silver;
+}
+section.partners ol.tiers > li.lunch h2 {
+  color: #cd7f32;
+}
+section.partners ol.tiers > li.event h2 {
+  color: crimson;
+}
+section.partners ul.partners {
+  max-width: 960px;
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+section.partners ul.partners li {
+  margin: 25px;
+  list-style: none;
+  max-height: 200px;
+}
+section.partners ul.partners li a {
+  display: block;
+}
+section.partners ul.partners li a img {
+  display: block;
+  width: 250px;
+}
+section.location {
+  padding-bottom: 0;
+}
+section.location div.details {
+  margin-top: 50px;
+  width: 100%;
+  height: 80vh;
+  max-height: 40vw;
+  display: flex;
+}
+@media (max-width: 800px) {
+  section.location div.details {
+    max-height: 100%;
+    flex-direction: column-reverse;
+  }
+}
+section.location div.details .map {
+  position: relative;
+  flex-basis: 50%;
+}
+section.location div.details .map input {
+  display: none;
+}
+section.location div.details .map input:checked ~ label {
+  display: none;
+}
+section.location div.details .map label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+section.location div.details .map iframe {
+  width: 100%;
+  height: 100%;
+}
+section.location div.details .gallery {
+  flex-basis: 50%;
+  background: url('location.jpg') left center;
+  background-size: cover;
+  filter: hue-rotate(-10deg);
+}
+section.schedule ol.days {
+  padding: 10px;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+section.schedule ol.days > li .talks {
+  position: relative;
+  height: 900px;
+  margin: 0 20px 30px;
+}
+section.schedule ol.days > li .talks > li {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+section.schedule ol.days > li .talks > li > label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 0 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+section.schedule ol.days > li .talks > li > label:not([for]) {
+  background: rgba(255, 255, 255, 0.5);
+}
+section.schedule ol.days > li .talks > li > label:not([for]) > time {
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+}
+section.schedule ol.days > li .talks > li > label:not([for]) .title {
+  font-weight: 100;
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+section.schedule ol.days > li .talks > li > label:not([for]) .sponsor {
+  display: block;
+  font-size: .8em;
+  font-weight: bold;
+}
+section.schedule ol.days > li .talks > li > label:not([for]) .sponsor:before {
+  font-weight: 300;
+  content: "Sponsored by: ";
+}
+section.schedule ol.days > li .talks > li > label > time {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 2px;
+  width: 40px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+section.schedule ol.days > li .talks > li > label > time > span {
+  font-size: .75em;
+}
+section.schedule ol.days > li .talks > li > label > time > span:nth-of-type(2) {
+  font-size: .5em;
+  opacity: .75;
+}
+section.schedule ol.days > li .talks > li[data-track="A"] {
+  right: 50%;
+}
+section.schedule ol.days > li .talks > li[data-track="B"] {
+  left: 50%;
+}
+section.schedule ol.days > li .talks > li[data-starts^="17"] {
+  top: 900px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="16"] {
+  top: 780px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="15"] {
+  top: 660px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="14"] {
+  top: 540px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="13"] {
+  top: 420px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="12"] {
+  top: 300px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="11"] {
+  top: 180px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="10"] {
+  top: 60px;
+}
+section.schedule ol.days > li .talks > li[data-starts^="9"] {
+  top: -60px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="0"] {
+  margin-top: 0px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="5"] {
+  margin-top: 10px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="10"] {
+  margin-top: 20px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="15"] {
+  margin-top: 30px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="20"] {
+  margin-top: 40px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="25"] {
+  margin-top: 50px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="30"] {
+  margin-top: 60px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="35"] {
+  margin-top: 70px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="40"] {
+  margin-top: 80px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="45"] {
+  margin-top: 90px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="50"] {
+  margin-top: 100px;
+}
+section.schedule ol.days > li .talks > li[data-starts$="55"] {
+  margin-top: 110px;
+}
+section.schedule ol.days > li .talks > li[data-duration="5"] {
+  height: 10px;
+}
+section.schedule ol.days > li .talks > li[data-duration="10"] {
+  height: 20px;
+}
+section.schedule ol.days > li .talks > li[data-duration="15"] {
+  height: 30px;
+}
+section.schedule ol.days > li .talks > li[data-duration="20"] {
+  height: 40px;
+}
+section.schedule ol.days > li .talks > li[data-duration="25"] {
+  height: 50px;
+}
+section.schedule ol.days > li .talks > li[data-duration="30"] {
+  height: 60px;
+}
+section.schedule ol.days > li .talks > li[data-duration="35"] {
+  height: 70px;
+}
+section.schedule ol.days > li .talks > li[data-duration="40"] {
+  height: 80px;
+}
+section.schedule ol.days > li .talks > li[data-duration="45"] {
+  height: 90px;
+}
+section.schedule ol.days > li .talks > li[data-duration="50"] {
+  height: 100px;
+}
+section.schedule ol.days > li .talks > li[data-duration="55"] {
+  height: 110px;
+}
+section.schedule ol.days > li .talks > li[data-duration="60"] {
+  height: 120px;
+}
+section.schedule ol.days > li .talks > li[data-duration="65"] {
+  height: 130px;
+}
+section.schedule ol.days > li .talks > li[data-duration="70"] {
+  height: 140px;
+}
+section.schedule ol.days > li .talks > li[data-duration="75"] {
+  height: 150px;
+}
+section.schedule ol.days > li .talks > li[data-duration="80"] {
+  height: 160px;
+}
+section.schedule ol.days > li .talks > li[data-duration="85"] {
+  height: 170px;
+}
+section.schedule ol.days > li .talks > li[data-duration="90"] {
+  height: 180px;
+}
+section.schedule ol.days > li .talks > li[data-duration="95"] {
+  height: 190px;
+}
+section.schedule ol.days > li .talks > li[data-duration="100"] {
+  height: 200px;
+}
+section.schedule ol.days > li .talks > li[data-duration="105"] {
+  height: 210px;
+}
+section.schedule ol.days > li .talks > li[data-duration="110"] {
+  height: 220px;
+}
+section.schedule ol.days > li .talks > li[data-duration="115"] {
+  height: 230px;
+}
+section.schedule ol.days > li .talks > li[data-duration="120"] {
+  height: 240px;
+}
+section.schedule ol.days > li .talks > li[data-duration="125"] {
+  height: 250px;
+}
+section.schedule ol.days > li .talks > li[data-duration="130"] {
+  height: 260px;
+}
+section.schedule ol.days > li .talks > li[data-duration="135"] {
+  height: 270px;
+}
+section.schedule ol.days > li .talks > li[data-duration="140"] {
+  height: 280px;
+}
+section.schedule ol.days > li .talks > li[data-duration="145"] {
+  height: 290px;
+}
+section.schedule ol.days > li .talks > li[data-duration="150"] {
+  height: 300px;
+}
+section.schedule ol.days > li .talks > li[data-duration="155"] {
+  height: 310px;
+}
+section.schedule ol.days > li .talks > li[data-duration="160"] {
+  height: 320px;
+}
+section.schedule ol.days > li .talks > li[data-duration="165"] {
+  height: 330px;
+}
+section.schedule ol.days > li .talks > li[data-duration="170"] {
+  height: 340px;
+}
+section.schedule ol.days > li .talks > li[data-duration="175"] {
+  height: 350px;
+}
+section.schedule ol.days > li .talks > li[data-duration="180"] {
+  height: 360px;
+}
+section.schedule ol.days > li .talks > li[data-duration="185"] {
+  height: 370px;
+}
+section.schedule ol.days > li .talks > li[data-duration="190"] {
+  height: 380px;
+}
+section.schedule ol.days > li .talks > li[data-duration="195"] {
+  height: 390px;
+}
+section.schedule ol.days > li .talks > li[data-duration="200"] {
+  height: 400px;
+}
+section.schedule ol.days > li .talks > li[data-duration="205"] {
+  height: 410px;
+}
+section.schedule ol.days > li .talks > li[data-duration="210"] {
+  height: 420px;
+}
+section.schedule ol.days > li .talks > li[data-duration="215"] {
+  height: 430px;
+}
+section.schedule ol.days > li .talks > li[data-duration="220"] {
+  height: 440px;
+}
+section.schedule ol.days > li .talks > li[data-duration="225"] {
+  height: 450px;
+}
+section.schedule ol.days > li .talks > li[data-duration="230"] {
+  height: 460px;
+}
+section.schedule ol.days > li .talks > li[data-duration="235"] {
+  height: 470px;
+}
+section.schedule ol.days > li .talks > li[data-duration="240"] {
+  height: 480px;
+}
+section.schedule ol.days h1 {
+  font-size: 36px;
+  text-align: left;
+  padding: 0;
+}
+@media (min-width: 600px) {
+  section.schedule ol.days {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  section.schedule ol.days > li {
+    flex-basis: 50%;
+  }
+}
+section.schedule ol.days > li {
+  margin-bottom: 2em;
+  list-style: none;
+}
+section.schedule ol.days > li .times li {
+  list-style: none;
+}
+section.schedule ol.days > li .times li p.coords {
+  margin: 0;
+}
+section.schedule ol.days > li .times li p.speaker {
+  margin-top: 0;
+  margin-left: 25%;
+}
+section.schedule ol.days > li .times li:nth-last-child(n+2):after {
+  display: block;
+  width: 3em;
+  margin: 0 auto 1em;
+  content: ' ';
+  border-top: 1px solid black;
+}
+a[name] {
+  position: relative;
+  top: -49px;
+  background: red;
+  height: 0;
+  display: block;
+}
+section.intro {
+  padding-top: 50px;
+}
+section.intro h2 + p {
+  margin-top: 1em;
+}
+.talks .details > h3 {
+  margin-top: 30px;
+}
+input[type="radio"]:not(:checked) ~ .details {
+  display: none;
+}
+input[type="radio"] ~ .details {
+  overflow: auto;
+  padding: 25px;
+  text-align: left;
+  position: fixed;
+  background: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 1000;
+}
+input[type="radio"] ~ .details label[for="nospeaker"] {
+  font-size: 0;
+  cursor: pointer;
+}
+input[type="radio"] ~ .details label[for="nospeaker"]:before {
+  line-height: 25px;
+  content: '×';
+  display: block;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+}
+input[type="radio"] ~ .details h2 {
+  font-weight: 100;
+  font-size: 50px;
+  padding: 0;
+  padding-top: 30px;
+}
+input[type="radio"] ~ .details h3 {
+  padding: 0;
+}
+input[type="radio"] ~ .details > p {
+  margin: 1em 0;
+}
+input[type="radio"] ~ .details > h3 {
+  padding-bottom: 30px;
+}
+input[type="radio"] ~ .details > h3:after {
+  display: block;
+  content: ' ';
+  clear: both;
+}
+input[type="radio"] ~ .details .image {
+  margin: 0 auto;
+  display: block;
+}
+@media (min-width: 600px) {
+  input[type="radio"] ~ .details .image {
+    float: left;
+    margin: 15px;
+    margin-right: 45px;
+  }
+  input[type="radio"] ~ .details h2,
+  input[type="radio"] ~ .details h3 {
+    text-align: left;
+  }
+}
+@media (min-width: 800px) {
+  input[type="radio"] ~ .details {
+    padding: 50px calc(50vw - 380px);
+  }
+}
+input[type="radio"] ~ .details h4 {
+  text-align: left;
+  padding: 25px 0;
+}
+input[type="radio"] ~ .details .speakers {
+  list-style: none;
+}
+input[type="radio"] ~ .details .speakers label {
+  cursor: pointer;
+}
+input[type="radio"] ~ .details .speakers label > h2 {
+  padding-top: 50px;
+}
+input[type="radio"] ~ .details .speakers label:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+input[type="radio"] ~ .details .speakers .image {
+  overflow: hidden;
+  display: inline-block;
+  background: crimson;
+  width: 160px;
+  height: 160px;
+  border-radius: 160px;
+  border: 8px solid #111;
+}
+input[type="radio"] ~ .details .speakers .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 640px) {
+  input[type="radio"] ~ .details .speakers .image {
+    display: block;
+    margin: 30px auto -30px;
+  }
+}
+input[type="radio"] ~ .details .talks > li {
+  margin-left: 30px;
+  list-style-type: square;
+}
+input[type="radio"] ~ .details .talks > li h3 {
+  margin: 2em 0 1.5em;
+  text-align: left;
+}
+input[type="radio"] ~ .details .talks > li li {
+  margin-left: 30px;
+  margin-bottom: .75em;
+}
+input[type="radio"] ~ .details .talks > li li p {
+  margin-bottom: 0;
+}
+input[type="radio"] ~ .details .talks > li li:last-child {
+  margin-bottom: 1.5em;
+}
+input[type="radio"] ~ .details .talks > li > p {
+  margin-bottom: 1.5em;
+}
+section.speakers > ul {
+  text-align: center;
+}
+section.speakers > ul > li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+  width: 240px;
+  margin: 0 10px;
+}
+section.speakers > ul > li label {
+  cursor: pointer;
+}
+section.speakers > ul > li p {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+section.speakers > ul > li p sup {
+  font-style: italic;
+}
+section.speakers > ul > li p sup:before {
+  content: '[';
+  font-style: normal;
+}
+section.speakers > ul > li p sup:after {
+  content: ' ]';
+  font-style: normal;
+}
+section.speakers > ul > li p a {
+  font-weight: 900;
+}
+section.speakers > ul > li .image {
+  overflow: hidden;
+  display: inline-block;
+  background: crimson;
+  width: 160px;
+  height: 160px;
+  border-radius: 160px;
+  border: 8px solid #111;
+}
+section.speakers > ul > li .image a.add {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-size: 96px;
+  color: white;
+  font-weight: 900;
+}
+section.speakers > ul > li .image a.add:hover {
+  text-decoration: none;
+}
+section.speakers > ul > li .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 550px) {
+  section.speakers > ul > li {
+    width: 180px;
+    margin: 0;
+  }
+}
